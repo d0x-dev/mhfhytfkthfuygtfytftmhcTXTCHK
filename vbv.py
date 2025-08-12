@@ -11,7 +11,7 @@ import json
 GATEWAY = "3DS Lookup"
 WEB_PORT = 5202
 WEB_KEY = "darkwaslost"  # Your secret key
-VBVBIN_GITHUB_URL = "https://raw.githubusercontent.com/BL4CKH4T336/num/refs/heads/main/vbvbin.txt"
+VBVBIN_GITHUB_URL = "https://raw.githubusercontent.com/d0x-dev/mhfhytfkthfuygtfytftmhcTXTCHK/refs/heads/main/vbvbin.txt"
 
 async def download_vbvbin():
     """Download the latest vbvbin.txt from GitHub"""
