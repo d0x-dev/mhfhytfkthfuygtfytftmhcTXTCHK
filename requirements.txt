@@ -4,3 +4,14 @@ fake_useragent
 bs4
 httpx
 aiohttp
+flask
+fake-useragent
+pyTelegramBotAPI
+beautifulsoup4
+psutil
+googlesearch-python
+yt-dlp
+faker
+selenium
+schedule
+requests
