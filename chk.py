@@ -134,6 +134,8 @@ def check_card(ccx):
         if 'error' in stripe_response:
             error_code = stripe_response['error']['code']
             error_message = stripe_response['error']['message']
+            if error_code == 'card_declined':
+                return {"status": "Declined", "response": "Card was declined"}
             return {"status": "Declined", "response": error_message}
 
         id = stripe_response.get('id', '')
@@ -173,7 +175,11 @@ def check_card(ccx):
 
         if "status" in final_response:
             if final_response["status"] == "success":
-                return {"status": "Approved", "response": "Card successfully verified"}
+                # Check for specific conditions in the response
+                if final_response.get("requires_action"):
+                    return {"status": "Approved", "response": "OTP_REQUIRED"}
+                else:
+                    return {"status": "Approved", "response": "Succeeded"}
             elif final_response["status"] == "error":
                 error_msg = final_response.get("error", {}).get("message", "Card was declined")
                 return {"status": "Declined", "response": error_msg}
