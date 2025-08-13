@@ -15,3 +15,4 @@ faker
 selenium
 schedule
 requests
+requests-toolbelt
